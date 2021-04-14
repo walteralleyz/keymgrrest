@@ -1,12 +1,8 @@
 package br.com.zup.utils
 
-import br.com.zup.KeymgrExcludeResponse
-import br.com.zup.KeymgrReadAllResponse
-import br.com.zup.KeymgrReadResponse
-import br.com.zup.KeymgrRegistryResponse
+import br.com.zup.*
 import br.com.zup.pix.all.AllResponse
 import br.com.zup.pix.all.Response
-import br.com.zup.pix.read.AccountInfo
 import br.com.zup.pix.read.ReadResponse
 import br.com.zup.pix.registry.RegistryResponse
 import br.com.zup.pix.remove.RemoveResponse
@@ -21,14 +17,7 @@ fun KeymgrReadResponse.toAPIResponse() = ReadResponse(
     this.pixType,
     this.pix,
     this.createdAt,
-    AccountInfo(
-        this.accountInfo.name,
-        this.accountInfo.cpf,
-        this.accountInfo.bankName,
-        this.accountInfo.branch,
-        this.accountInfo.accountNumber,
-        this.accountInfo.accountType
-    )
+    this.accountInfo
 )
 
 fun KeymgrReadAllResponse.toAPIResponse(): AllResponse {

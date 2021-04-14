@@ -25,7 +25,6 @@ class ReadTest(
         client.get<ReadRequest, ReadResponse>("/api/pix/${response.id}/c56dfef4-7901-44fb-84e2-a2cefb157890")
             .run {
                 assertNotNull(this)
-                assertNotNull(this.accountInfo.cpf)
                 assertNotNull(this.pix)
             }
 

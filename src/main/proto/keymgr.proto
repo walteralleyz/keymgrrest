@@ -19,10 +19,6 @@ service KeymgrInternReadService {
   rpc read (KeymgrInternReadRequest) returns (KeymgrReadResponse) {}
 }
 
-service KeymgrExternReadService {
-  rpc read (KeymgrExternReadRequest) returns (KeymgrReadResponse) {}
-}
-
 service KeymgrReadAllService {
   rpc readAll (KeymgrReadAllRequest) returns (KeymgrReadAllResponse) {}
 }
@@ -83,10 +79,6 @@ message KeymgrExcludeResponse {
 message KeymgrInternReadRequest {
   int32 id = 1;
   string clientId = 2;
-}
-
-message KeymgrExternReadRequest {
-  string pix = 1;
 }
 
 message KeymgrReadResponse {
